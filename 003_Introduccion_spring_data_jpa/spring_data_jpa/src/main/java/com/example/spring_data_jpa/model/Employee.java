@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name="empolyees")
+@Table(name="employees")
 public class Employee {
 
     @Id
@@ -17,16 +17,16 @@ public class Employee {
 
     private LocalDate birthDate;
 
+    private boolean married;
+
     public Employee() {
     }
 
-    public Employee(Long id, String fullName, LocalDate birthDate) {
+    public Employee(Long id, String fullName, LocalDate birthDate, Boolean married) {
         this.id = id;
         this.fullName = fullName;
-
         this.birthDate = birthDate;
-
-
+        this.married = married;
     }
 
     public Long getId() {
@@ -53,12 +53,21 @@ public class Employee {
         this.birthDate = birthDate;
     }
 
+    public boolean isMarried() {
+        return married;
+    }
+
+    public void setMarried(boolean married) {
+        this.married = married;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
                 "id=" + id +
                 ", fullName='" + fullName + '\'' +
                 ", birthDate=" + birthDate +
+                ", married=" + married +
                 '}';
     }
 }
