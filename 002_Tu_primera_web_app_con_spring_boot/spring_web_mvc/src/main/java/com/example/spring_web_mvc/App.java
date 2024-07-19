@@ -21,7 +21,9 @@ public class App {
                  new Product(null, "product1", 5.99, 1),
                  new Product(null, "product2", 6.99, 2),
                  new Product(null, "product3", 7.99, 4),
-                 new Product(null, "product4", 8.99, 1)
+                 new Product(null, "product4", 8.99, 1),
+                 new Product(null, "product5", 8.99, 1),
+                 new Product(null, "product6", 8.99, 1)
          );
          repository.saveAll(products);
     }
