@@ -17,14 +17,14 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    //GET hhttp://localhost:8080/products/new
+    //GET http://localhost:8080/products/new
     @GetMapping("/products/new")
     public String getForm(Model model){
         model.addAttribute("product", new Product());
         return "product-form";
     }
 
-    // POST hhttp://localhost:8080/products
+    // POST http://localhost:8080/products
     @PostMapping("/products")
     public String createProduct(Model model, @Valid Product product, BindingResult validation){
         // validaciones personalizadas

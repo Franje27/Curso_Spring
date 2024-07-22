@@ -16,27 +16,39 @@
 
         </div>
         <div class="col">
-
-
-            <form th:action="@{/products}" method="POST" th:object="product">
+            <h1 >Crear producto</h1>
+            <form th:action="@{/products}" method="POST" th:object="${product}">
+                <!-- Campo titulo de producto -->
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <label for="productTitle" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="productTitle">
+                    <div class="form-text">
+                        <p th:each="err : ${#fields.errors('title')}" th:text="${err}" class="text-danger"></p>
+                    </div>
+
+                <!-- Campo fecha released de producto -->
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="released" class="form-label">Released Date</label>
+                    <input type="date" class="form-control" id="released">
+                    <div class="form-text">
+                        <p th:each="err : ${#fields.errors('released')}" th:text="${err}" class="text-danger"></p>
+                    </div>
+
+                    <!-- Campo price de producto -->
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="mb-3">
+                    <label for="productPrice" class="form-label">Price (€)</label>
+                    <input type="number" step=".01" class="form-control" id="productPrice">
+                    <div class="form-text">
+                        <p th:each="err : ${#fields.errors('price')}" th:text="${err}" class="text-danger"></p>
+                    </div>
+                    </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
 
 
-        </div>
+         </div>
         <div class="col">
 
         </div>

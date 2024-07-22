@@ -12,7 +12,7 @@ public class Product {
     private Long id;
 
     @Size(min = 10, max = 100)
-    @NotNull(message = "Titulo producto no puede ser nulo")
+ //   @NotNull(message = "Titulo producto no puede ser nulo")
     private String title;
 
     @DateTimeFormat (pattern = "yyy-MM-dd")
