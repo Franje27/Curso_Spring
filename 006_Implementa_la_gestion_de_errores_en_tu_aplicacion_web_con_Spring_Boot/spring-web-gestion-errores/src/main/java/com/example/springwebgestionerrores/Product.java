@@ -11,22 +11,24 @@ public class Product {
 
     private Long id;
 
-    @Size(min = 10, max = 100)
- //   @NotNull(message = "Titulo producto no puede ser nulo")
+   @Size(min = 10, max = 100)
+   @NotNull(message = "Título producto no puede ser nulo")
     private String title;
 
-    @DateTimeFormat (pattern = "yyy-MM-dd")
+    @DateTimeFormat (pattern = "yyyy-MM-dd")
+    @NotNull(message = "Fecha producto no puede ser nula")
     private LocalDate released;
 
     @Min(value = 5)
+    @NotNull(message = "Precio producto no puede ser nulo")
     private Double price;
 
     public Product() {
     }
 
-    public Product(String title, Long id, LocalDate released, Double price) {
-        this.title = title;
+    public Product(Long id, String title, LocalDate released, Double price) {
         this.id = id;
+        this.title = title;
         this.released = released;
         this.price = price;
     }
@@ -39,11 +41,11 @@ public class Product {
         this.id = id;
     }
 
-    public @Size(min = 10, max = 100) @NotNull(message = "Titulo producto no puede ser nulo") String getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(@Size(min = 10, max = 100) @NotNull(message = "Titulo producto no puede ser nulo") String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
@@ -55,11 +57,11 @@ public class Product {
         this.released = released;
     }
 
-    public @Min(value = 5) Double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(@Min(value = 5) Double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -72,6 +74,4 @@ public class Product {
                 ", price=" + price +
                 '}';
     }
-
-
 }

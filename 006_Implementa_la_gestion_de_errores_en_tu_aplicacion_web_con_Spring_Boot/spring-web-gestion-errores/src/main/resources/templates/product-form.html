@@ -21,7 +21,7 @@
                 <!-- Campo titulo de producto -->
                 <div class="mb-3">
                     <label for="productTitle" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="productTitle">
+                    <input type="text" class="form-control" id="productTitle" th:field="*{title}" >
                     <div class="form-text">
                         <p th:each="err : ${#fields.errors('title')}" th:text="${err}" class="text-danger"></p>
                     </div>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="released" class="form-label">Released Date</label>
-                    <input type="date" class="form-control" id="released">
+                    <input type="date" class="form-control" id="released" th:field="*{released}" >
                     <div class="form-text">
                         <p th:each="err : ${#fields.errors('released')}" th:text="${err}" class="text-danger"></p>
                     </div>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="productPrice" class="form-label">Price (€)</label>
-                    <input type="number" step=".01" class="form-control" id="productPrice">
+                    <input type="number" step=".01" class="form-control" id="productPrice" th:field="*{price}">
                     <div class="form-text">
                         <p th:each="err : ${#fields.errors('price')}" th:text="${err}" class="text-danger"></p>
                     </div>

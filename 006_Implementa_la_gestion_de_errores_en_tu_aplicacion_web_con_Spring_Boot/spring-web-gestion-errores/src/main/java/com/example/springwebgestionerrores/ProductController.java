@@ -15,9 +15,11 @@ public class ProductController {
 
 
     @Autowired
-    ProductService productService;
+    ProductService service;
 
-    //GET http://localhost:8080/products/new
+    /*
+    GET http://localhost:8080/products/new
+     */
     @GetMapping("/products/new")
     public String getForm(Model model){
         model.addAttribute("product", new Product());
@@ -37,6 +39,8 @@ public class ProductController {
         // Hacer mas validaciones personalizadas
         //Se podria guardar en base de datos
         model.addAttribute("product", product);
+     //   service.findById(1L);
+        service.save(product);
         return "product-info";
     }
 
