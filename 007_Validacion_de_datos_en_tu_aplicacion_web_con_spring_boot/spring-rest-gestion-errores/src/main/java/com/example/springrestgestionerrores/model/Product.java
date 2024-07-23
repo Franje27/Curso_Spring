@@ -1,15 +1,31 @@
 package com.example.springrestgestionerrores.model;
 
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
 
 public class Product {
 
-
     private Long id;
+
+    @Size(min = 10, max = 1000)
+    @NotNull(message = "Titulo obligatorio")
     private String title;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull(message = "Fecha obligatoria")
     private LocalDate released;
+
+    @Min(value = 5)
+    @NotNull(message = "Precio obligatorio")
     private Double price;
+
+    @Valid
     private Manufacturer manufacturer;
 
     public Product() {
