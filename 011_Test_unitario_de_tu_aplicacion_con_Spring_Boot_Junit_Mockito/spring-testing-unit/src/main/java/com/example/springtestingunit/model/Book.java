@@ -13,15 +13,15 @@ public class Book {
     private Long id;
 
 
-    private String name;
+    private String title;
     private String description;
 
     public Book() {
     }
 
-    public Book(Long id, String name, String description) {
+    public Book(Long id, String title, String description) {
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.description = description;
     }
 
@@ -33,12 +33,12 @@ public class Book {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String name) {
+        this.title = title;
     }
 
     public String getDescription() {
@@ -53,7 +53,7 @@ public class Book {
     public String toString() {
         return "Book{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }

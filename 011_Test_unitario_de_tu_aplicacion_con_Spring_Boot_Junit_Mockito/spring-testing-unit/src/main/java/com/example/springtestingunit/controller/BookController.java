@@ -22,6 +22,8 @@ public class BookController {
         return "book-list";
     }
 
+
+
     @GetMapping("/books/{id}")
     public String findById(@PathVariable Long id, Model model){
         Book book = this.bookService.findById(id).orElseThrow();

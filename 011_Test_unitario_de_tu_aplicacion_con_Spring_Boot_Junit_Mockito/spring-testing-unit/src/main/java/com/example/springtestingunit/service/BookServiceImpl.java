@@ -24,6 +24,9 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Optional<Book> findById(Long id) {
-        return this.bookRepository.findById(id);
+        return this.bookRepository.findById(id).map(book -> {
+            book.setTitle(book.getTitle().toUpperCase());
+            return book;
+        });
     }
 }
