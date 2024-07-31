@@ -37,7 +37,7 @@ public class App {
     //    repo.findById("aeb085b2-29c2-4029-81d4-aa9490809ab9").ifPresent(System.out::println);
         repo.findTop3ByAge(30).forEach(System.out::println);
 
-        var redis = context.getBean(RedisTemplate.class);
+    //    var redis = context.getBean(RedisTemplate.class);
 
     }
 
